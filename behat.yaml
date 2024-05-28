@@ -1,0 +1,25 @@
+default:
+  suites:
+    Blog:
+      paths:
+        features: tests/Behat/Features
+
+      contexts:
+        - Blog\Tests\Behat\Context\BlogPostContext
+        - Blog\Tests\Behat\Context\ApiContext
+        - Blog\Tests\Behat\Context\DatabaseContext
+
+
+  extensions:
+    FriendsOfBehat\SymfonyExtension:
+      bootstrap: tests/bootstrap.php
+      kernel:
+        class: Blog\Infrastructure\Kernel
+
+    Imbo\BehatApiExtension:
+      apiClient:
+        base_uri: http://localhost:8000
+        timeout: 5.0
+        verify: false
+
+
