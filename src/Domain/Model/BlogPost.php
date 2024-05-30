@@ -7,7 +7,7 @@ use Ramsey\Uuid\UuidInterface;
 final class BlogPost
 {
     public function __construct(
-        private int $id,
+        private ?int $id,
         private UuidInterface $uuid,
         private string $title,
         private string $content,
@@ -18,7 +18,7 @@ final class BlogPost
     ) {
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }

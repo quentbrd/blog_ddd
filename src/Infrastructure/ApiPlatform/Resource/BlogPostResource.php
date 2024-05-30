@@ -6,20 +6,29 @@ use ApiPlatform\Metadata\ApiProperty;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Validator\Exception\ValidationException;
+use Blog\Infrastructure\ApiPlatform\Input\BlogPostCreationInput;
+use Blog\Infrastructure\ApiPlatform\Processor\BlogPostCreationProcessor;
 use Blog\Infrastructure\ApiPlatform\Provider\Provider;
 use Blog\Infrastructure\ApiPlatform\View\AuthorView;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Exception\MissingConstructorArgumentsException;
 
 #[ApiResource(
-    shortName: 'BlogPost',
+    shortName: 'Post',
     operations: [
+        new Post(
+            exceptionToStatus: [MissingConstructorArgumentsException::class => 400, ValidationException::class => 400],
+            normalizationContext: ['groups' => ['post:item']],
+            input: BlogPostCreationInput::class,
+            processor: BlogPostCreationProcessor::class
+        ),
         new Get(
-            uriTemplate: '/posts/{uuid}',
             normalizationContext: ['groups' => ['post:item']],
         ),
         new GetCollection(
-            uriTemplate: '/posts',
             normalizationContext: ['groups' => ['post:list']],
         ),
     ],

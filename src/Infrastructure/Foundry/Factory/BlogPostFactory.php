@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Blog\Infrastructure\Foundry\Factory;
 
 use Blog\Domain\Model\BlogPost;
-use Faker\Generator;
 use Ramsey\Uuid\Uuid;
 use Zenstruck\Foundry\ModelFactory;
 
@@ -29,12 +28,9 @@ final class BlogPostFactory extends ModelFactory
      */
     protected function getDefaults(): array
     {
-        /** @var Generator $uniqueGenerator */
-        $uniqueGenerator = self::faker()->unique();
-
         return [
-            'id' => $uniqueGenerator->numberBetween(1, 1000000),
-            'uuid' => Uuid::fromString($uniqueGenerator->uuid()),
+            'id' => self::faker()->unique()->numberBetween(1, 1000000),
+            'uuid' => Uuid::uuid4(),
             'title' => self::faker()->sentence(3),
             'content' => self::faker()->paragraphs(asText: true),
             'summary' => self::faker()->paragraph(2),

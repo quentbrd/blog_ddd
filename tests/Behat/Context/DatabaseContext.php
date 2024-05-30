@@ -7,9 +7,9 @@ namespace Blog\Tests\Behat\Context;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Gherkin\Node\TableNode;
-use DateTimeImmutable;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\ORM\EntityManagerInterface;
+
 use function Zenstruck\Foundry\faker;
 
 final class DatabaseContext implements Context
@@ -113,7 +113,7 @@ final class DatabaseContext implements Context
                         'fake' === $value ? faker()->text($isText ? 300 : 40) : $value,
                     );
                 } elseif ('datetime' === $type) {
-                    $values[] = sprintf(' %s = "%s"', $column, (new DateTimeImmutable($value))->format('Y-m-d h:i:s'));
+                    $values[] = sprintf(' %s = "%s"', $column, (new \DateTimeImmutable($value))->format('Y-m-d h:i:s'));
                 } else {
                     $values[] = sprintf(' %s = %s', $column, $value);
                 }

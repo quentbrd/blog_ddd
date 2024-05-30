@@ -21,7 +21,7 @@ final readonly class Provider implements ProviderInterface
     {
         foreach ($this->dataProviders as $dataProvider) {
             if (true === $dataProvider->supports($operation)) {
-                return $dataProvider->provide();
+                return $dataProvider->provide($uriVariables);
             }
         }
 
