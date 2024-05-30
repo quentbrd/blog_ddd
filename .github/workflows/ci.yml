@@ -1,0 +1,138 @@
+name: Blog CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, pdo_mysql
+
+      - name: Cache build
+        id: build-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install Composer
+        run: |
+          curl -sS https://getcomposer.org/installer | php
+          mv composer.phar /usr/local/bin/composer
+
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+  tests:
+    needs: build
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:latest
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: blog
+        ports:
+          - 3306:3306
+
+    steps:
+#      - name: Create Database if not exists
+#        run: |
+#          mysql -h 127.0.0.1 -P 3306 -u root -proot -e "CREATE DATABASE IF NOT EXISTS blog;"
+#
+#      - name: Install pecl and enable pcov
+#        run: |
+#          sudo apt update
+#          sudo apt install -y php-pear
+#          sudo pecl install pcov
+#          echo "extension=pcov.so" | sudo tee -a /etc/php/8.2/cli/php.ini
+#          echo "extension=pcov.so" | sudo tee -a /etc/php/8.2/apache2/php.ini
+
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, pdo_mysql
+
+      - name: Download build files
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+
+      - name: Check if .env.ci exists
+        run: test -f .env.ci || { echo "File .env.ci does not exist"; exit 1; }
+      - name: Replace .env with .env.ci
+        run: cp .env.ci .env
+
+      - name: Ensure var Directory Exists
+        run: mkdir -p var
+      - name: Fix Permissions
+        run: chmod -R 777 var && chmod -R 777 vendor
+      - name: Start PHP Built-in Server
+        run: php -S 127.0.0.1:8000 -t public > /dev/null 2>&1 &
+
+      - name: PHPUnit
+        env:
+          DATABASE_URL: mysql://root:root@127.0.0.1:3306/blog
+        run: vendor/bin/phpunit
+
+#      - name: Upload code coverage report
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: phpunit-coverage
+#          path: phpunit.cov
+
+      - name: Behat
+        env:
+          DATABASE_URL: mysql://root:root@127.0.0.1:3306/blog
+        run: |
+          chmod -R 777 var
+          bin/console doctrine:database:drop --force -nq
+          bin/console doctrine:database:create -nq
+          bin/console doctrine:migrations:migrate -nq --allow-no-migration
+          bin/console cache:warmup
+          vendor/bin/behat -n --strict --format=progress --config behat.yaml
+#          mv /tmp/behat_coverage behat_coverage
+
+#      - name: Move phpunit.cov to coverage_parts
+#        run: mv phpunit.cov coverage_parts/
+#
+#      - name: Modify behat_coverage paths
+#        run: |
+#          perl -pi -e 's/s:([0-9]+):"\/var\/www\/html/"s:".($1+32).":\"\/builds\/services\/apis\/blog"/ge' behat_coverage/*
+#          mv behat_coverage/* coverage_parts/
+#
+#      - name: Merge coverage parts
+#        run: php -d memory_limit=512M vendor/bin/phpcov merge coverage_parts --cobertura coverage.cobertura.xml --text coverage.text --html html_coverage
+#
+#      - name: Display coverage report
+#        run: cat coverage.text
+#
+#      - name: Adjust coverage report paths
+#        run: |
+#          sed -i "s/\/src<\/source>/<\/source>/" coverage.cobertura.xml
+#          sed -i "s/filename=\"/filename=\"src\//" coverage.cobertura.xml
+#
+#      - name: Upload coverage report
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: code-coverage
+#          path: html_coverage
+
+      - name: Display Symfony logs
+        if: failure()
+        run: cat var/log/dev.log

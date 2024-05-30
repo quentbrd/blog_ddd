@@ -1,0 +1,25 @@
+imports:
+  - ./behat.yaml
+
+default:
+    suites:
+        QualityControl:
+            local_coverage_enabled: true
+
+        Legacy:
+            local_coverage_enabled: true
+
+        Authentication:
+            local_coverage_enabled: true
+
+        Shared:
+            local_coverage_enabled: true
+
+    extensions:
+        Imbo\BehatApiExtension:
+            apiClient:
+                headers:
+                  'X-Coverage': true
+
+        BehatLocalCodeCoverage\LocalCodeCoverageExtension:
+          target_directory: '/tmp/behat_coverage/'
