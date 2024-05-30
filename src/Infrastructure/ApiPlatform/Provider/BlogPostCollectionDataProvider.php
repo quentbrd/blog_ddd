@@ -30,7 +30,12 @@ class BlogPostCollectionDataProvider implements DataProviderInterface
         return true;
     }
 
-    public function provide(): mixed
+    /**
+     * @param array<string, mixed> $uriVariables
+     *
+     * @return array<BlogPostResource>
+     */
+    public function provide(array $uriVariables): array
     {
         return array_map(
             [$this->factory, 'fromModel'],

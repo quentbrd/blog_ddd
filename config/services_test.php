@@ -11,6 +11,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->autowire()
         ->autoconfigure();
 
-    $services->load('Blog\Tests\Behat\\', __DIR__ . '/../tests/Behat/*');
+    $services->load('Blog\Tests\Behat\\', __DIR__.'/../tests/Behat/*');
 };
-

@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use Blog\Domain\Exception\EntityCreationException;
+use Blog\Domain\Exception\EntityNotFoundException;
+use Blog\Domain\Exception\RelatedEntityNotFoundException;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
@@ -45,5 +48,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ],
         'keep_legacy_inflector' => false,
         'use_symfony_listeners' => true,
+        'exception_to_status' => [
+            InvalidArgumentException::class => 400,
+            EntityNotFoundException::class => 404,
+            EntityCreationException::class => 422,
+            RelatedEntityNotFoundException::class => 422,
+        ],
     ]);
 };

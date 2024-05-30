@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Blog\Infrastructure\Doctrine\Fixtures;
 
 use Blog\Domain\Model\Author;
-use Blog\Infrastructure\Foundry\Factory\AuthorFactory;
 use Doctrine\Persistence\ObjectManager;
 
 /**
@@ -15,7 +14,7 @@ class AuthorFixtures extends AbstractFixture
 {
     public function load(ObjectManager $manager): void
     {
-        AuthorFactory::createMany(10);
+        // authors are created with blog posts
     }
 
     /**

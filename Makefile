@@ -138,3 +138,7 @@ cc:
 ## Transform yaml config files to PHP
 config-php:
 	vendor/bin/config-transformer convert *
+
+## Start server
+server-start:
+	symfony server:start

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Blog\Tests\Behat;
 
+use Blog\Domain\Model\Author;
 use Blog\Domain\Model\BlogPost;
 use Zenstruck\Foundry\Factory;
 use Zenstruck\Foundry\Proxy;
@@ -29,6 +30,22 @@ final class Storage
     public function setBlogPost(Proxy $post): void
     {
         $this->storeEntity($post);
+    }
+
+    /**
+     * @return Proxy<Author>
+     */
+    public function getAuthor(): Proxy
+    {
+        return $this->findEntity(Author::class);
+    }
+
+    /**
+     * @param Proxy<Author> $author
+     */
+    public function setAuthor(Proxy $author): void
+    {
+        $this->storeEntity($author);
     }
 
     /* @phpstan-ignore-next-line */
