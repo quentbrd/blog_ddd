@@ -1,8 +1,14 @@
+includes:
+    - ./vendor/phpstan/phpstan-symfony/extension.neon
+
 parameters:
-    level: 6
+    level: 8
     paths:
-        - bin/
-        - config/
-        - public/
-        - src/
-        - tests/
+        - ./src
+        - ./tests
+
+    symfony:
+        containerXmlPath: ./var/cache/dev/Blog_Infrastructure_KernelDevDebugContainer.xml
+    scanDirectories:
+            - ./var/cache/dev/Symfony/Config
+

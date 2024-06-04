@@ -41,5 +41,4 @@ $ make help
 
 ## Going further
 - [Tests and tooling](docs/test_and_tools.md)
-- [CI/CD](docs/ci_cd.md)
 

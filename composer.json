@@ -91,6 +91,7 @@
         "phpstan/phpstan": "^1.11",
         "phpstan/phpstan-symfony": "^1.4",
         "phpunit/phpunit": "^11.1",
+        "qossmic/deptrac": "^2.0",
         "symfony/maker-bundle": "^1.59",
         "symfony/phpunit-bridge": "^7.0",
         "symfony/stopwatch": "7.0.*",

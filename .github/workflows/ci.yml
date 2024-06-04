@@ -21,7 +21,7 @@ jobs:
 
       - name: Cache build
         id: build-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: vendor
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
@@ -36,6 +36,47 @@ jobs:
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
+      - name: search wip
+        run: |
+          printf "\e[0;1mSearching for wip tags...\n"
+          BEHAT_WIPS=$(find tests -name '*.feature' -exec grep -l "@wip" {} \;)
+          PHPUNIT_WIPS=$(find tests -name '*.php' -exec grep -l "@group wip" {} \;)
+          if [ -n "$BEHAT_WIPS" ] || [ -n "$PHPUNIT_WIPS" ]; then
+            printf "\e[31;1m[KO]\e[0m\n\n"
+            printf "%s\n" "$BEHAT_WIPS" | tr " " "\n"
+            printf "%s\n" "$PHPUNIT_WIPS" | tr " " "\n"
+            exit 1;
+          else
+            printf "\e[32;1m[OK]\e[0m\n";
+          fi 
+
+  static-analysis:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, pdo_mysql
+
+      - name: Download build files
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+
+      - name: php-cs-fixer
+        run: vendor/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php --dry-run --diff
+
+      - name: phpstan
+        run: |
+          bin/console cache:warmup
+          vendor/bin/phpstan analyze -c phpstan.dist.neon --no-progress --memory-limit 1G
+
+      - name: deptrac
+        run: vendor/bin/deptrac
+
   tests:
     needs: build
     runs-on: ubuntu-latest
@@ -49,10 +90,6 @@ jobs:
           - 3306:3306
 
     steps:
-#      - name: Create Database if not exists
-#        run: |
-#          mysql -h 127.0.0.1 -P 3306 -u root -proot -e "CREATE DATABASE IF NOT EXISTS blog;"
-#
 #      - name: Install pecl and enable pcov
 #        run: |
 #          sudo apt update
@@ -67,8 +104,8 @@ jobs:
           php-version: '8.2'
           extensions: mbstring, intl, pdo_mysql
 
-      - name: Download build files
-        uses: actions/cache@v3
+      - name: Use cached files from build
+        uses: actions/cache@v4
         with:
           path: vendor
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}

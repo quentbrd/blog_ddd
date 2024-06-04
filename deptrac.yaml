@@ -1,0 +1,64 @@
+deptrac:
+  paths:
+    - ./src
+  exclude_files:
+    - ./tests
+
+  layers:
+    - name: Application
+      collectors:
+        - type: directory
+          value: src/Application/.*
+
+    - name: Domain
+      collectors:
+        - type: directory
+          value: src/Domain/.*
+
+    - name: Infrastructure
+      collectors:
+        - type: directory
+          value: src/Infrastructure/.*
+
+    - name: Attributes
+      collectors:
+        - { type: classLike, value: ^ApiPlatform\\Core\\Annotation }
+        - { type: classLike, value: ^Symfony\\Component\\Validator\\Constraints }
+        - { type: classLike, value: ^Symfony\\Component\\Serializer\\Annotation\\SerializedName }
+
+    - name: Vendor
+      collectors:
+        - { type: classLike, value: ^ApiPlatform\\(?!Core\\Annotation) }
+        - { type: classLike, value: ^Symfony\\(?!(Component\\Validator\\Constraints)|(Component\\Validator\\[ Constraint|ConstraintValidator|UnexpectedTypeException ])|(Component\\Serializer\\Annotation\\SerializedName)|(Component\\Security\\Core\\User\\UserInterface)) }
+        - { type: classLike, value: ^Zenstruck\\ }
+        - { type: classLike, value: ^Doctrine\\(?!(Common\\Collections)|(Common\\Util\\ClassUtils)) }
+        - { type: classLike, value: ^PHPStan\\ }
+        - { type: classLike, value: ^PhpParser\\ }
+        - { type: classLike, value: ^GuzzleHttp\\ClientInterface }
+
+    - name: Helpers
+      collectors:
+        - { type: classLike, value: ^BackedEnum$ }
+        - { type: classLike, value: ^Doctrine\\Common\\Collections\\ }
+        - { type: classLike, value: ^Doctrine\\Common\\Util\\ClassUtils$ }
+        - { type: classLike, value: ^Ramsey\\Uuid\\ }
+        - { type: classLike, value: ^Faker\\ }
+        - { type: classLike, value: ^MyCLabs\\Enum\\ }
+        - { type: classLike, value: ^Webmozart\\ }
+        - { type: classLike, value: ^Symfony\\Component\\Validator\\[ Constraint|ConstraintValidator|UnexpectedTypeException ] }
+        - { type: classLike, value: ^Symfony\\Component\\Security\\Core\\User\\UserInterface }
+
+  ruleset:
+    Application:
+      - Domain
+      - Helpers
+      - Attributes
+    Infrastructure:
+      - Domain
+      - Application
+      - Vendor
+      - Helpers
+      - Attributes
+    Domain:
+      - Helpers
+      - Attributes
