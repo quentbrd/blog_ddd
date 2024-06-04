@@ -53,10 +53,6 @@ When writing behat tests, you must be aware that database is cleaned up between 
 Therefore at the beginning of each scenario, you must setup the application (and its database) in the state needed to test behaviors.
 This enforce tests to be self explanatory.
 
-As written before, the application ran and tested is running under a test environment.
-This allows us to mock every external call and predict responses.
-You can have a look for example at `Returns\Infrastructure\Legacy\Symfony\HttpClient\MockLegacyHttpClient`
-
 Last but not least, there is no test database yet.
 Therefore be aware that if you run behat tests, it'll wipe out your local database.
 Of course you'll be able to refill it with fixtures (see the very next section).
