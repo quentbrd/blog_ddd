@@ -33,10 +33,13 @@ jobs:
           curl -sS https://getcomposer.org/installer | php
           mv composer.phar /usr/local/bin/composer
 
+      - name: Security
+        run: composer audit
+
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
-      - name: search wip
+      - name: Search wip
         run: |
           printf "\e[0;1mSearching for wip tags...\n"
           BEHAT_WIPS=$(find tests -name '*.feature' -exec grep -l "@wip" {} \;)
@@ -90,18 +93,11 @@ jobs:
           - 3306:3306
 
     steps:
-#      - name: Install pecl and enable pcov
-#        run: |
-#          sudo apt update
-#          sudo apt install -y php-pear
-#          sudo pecl install pcov
-#          echo "extension=pcov.so" | sudo tee -a /etc/php/8.2/cli/php.ini
-#          echo "extension=pcov.so" | sudo tee -a /etc/php/8.2/apache2/php.ini
-
       - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+          coverage: xdebug
           extensions: mbstring, intl, pdo_mysql
 
       - name: Use cached files from build
@@ -125,13 +121,13 @@ jobs:
       - name: PHPUnit
         env:
           DATABASE_URL: mysql://root:root@127.0.0.1:3306/blog
-        run: vendor/bin/phpunit
+        run: vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-php=coverage/phpunit.cov
 
-#      - name: Upload code coverage report
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: phpunit-coverage
-#          path: phpunit.cov
+      - name: Upload code coverage report
+        uses: actions/upload-artifact@v2
+        with:
+          name: phpunit-coverage
+          path: coverage/phpunit.cov
 
       - name: Behat
         env:
@@ -142,33 +138,26 @@ jobs:
           bin/console doctrine:database:create -nq
           bin/console doctrine:migrations:migrate -nq --allow-no-migration
           bin/console cache:warmup
-          vendor/bin/behat -n --strict --format=progress --config behat.yaml
-#          mv /tmp/behat_coverage behat_coverage
+          vendor/bin/behat -n --strict --format=progress --config behat.ci.yaml
 
-#      - name: Move phpunit.cov to coverage_parts
-#        run: mv phpunit.cov coverage_parts/
-#
-#      - name: Modify behat_coverage paths
-#        run: |
-#          perl -pi -e 's/s:([0-9]+):"\/var\/www\/html/"s:".($1+32).":\"\/builds\/services\/apis\/blog"/ge' behat_coverage/*
-#          mv behat_coverage/* coverage_parts/
-#
-#      - name: Merge coverage parts
-#        run: php -d memory_limit=512M vendor/bin/phpcov merge coverage_parts --cobertura coverage.cobertura.xml --text coverage.text --html html_coverage
-#
-#      - name: Display coverage report
-#        run: cat coverage.text
-#
-#      - name: Adjust coverage report paths
-#        run: |
-#          sed -i "s/\/src<\/source>/<\/source>/" coverage.cobertura.xml
-#          sed -i "s/filename=\"/filename=\"src\//" coverage.cobertura.xml
-#
-#      - name: Upload coverage report
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: code-coverage
-#          path: html_coverage
+      - name: Merge coverage parts
+        run: vendor/bin/phpcov merge coverage --text coverage/total.text --cobertura coverage/cobertura.xml
+
+      - name: Display coverage report
+        run: cat coverage/total.text
+
+      - name: Code Coverage Summary
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: 'coverage/cobertura.xml'
+          badge: true
+          fail_below_min: false
+          format: markdown
+          hide_branch_rate: false
+          hide_complexity: false
+          indicators: true
+          output: both
+          thresholds: '60 80'
 
       - name: Display Symfony logs
         if: failure()

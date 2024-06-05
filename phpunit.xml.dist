@@ -16,17 +16,22 @@
         <server name="KERNEL_CLASS" value="Blog\Infrastructure" />
     </php>
 
+    <source>
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <exclude>
+            <directory>tests</directory>
+        </exclude>
+    </source>
+
     <testsuites>
         <testsuite name="Project Test Suite">
-            <directory>tests</directory>
+            <directory suffix=".php">./tests/PHPUnit</directory>
         </testsuite>
     </testsuites>
 
-<!--    <coverage includeUncoveredFiles="true">-->
-<!--        <report>-->
-<!--            <xml outputDirectory="xml-coverage"/>-->
-<!--            <cobertura outputFile="cobertura.xml"/>-->
-<!--        </report>-->
-<!--    </coverage>-->
+    <coverage includeUncoveredFiles="true">
+    </coverage>
 
 </phpunit>

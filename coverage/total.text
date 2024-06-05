@@ -1,0 +1,16 @@
+
+
+Code Coverage Report:
+  2024-06-06 08:19:37
+
+ Summary:
+  Classes:  0.00% (0/35)
+  Methods:  2.99% (2/67)
+  Paths:    2.35% (2/85)
+  Branches:    1.94% (2/103)
+  Lines:    1.38% (2/145)
+
+Blog\Domain\Model\Author
+  Methods:  25.00% ( 1/ 4)   Paths:  25.00% (  1/  4)   Branches:  25.00% (  1/  4)   Lines:  25.00% (  1/  4)
+Blog\Domain\Model\BlogPost
+  Methods:  11.11% ( 1/ 9)   Paths:  11.11% (  1/  9)   Branches:  11.11% (  1/  9)   Lines:  11.11% (  1/  9)
