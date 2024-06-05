@@ -85,11 +85,13 @@
     "require-dev": {
         "behat/behat": "^3.14",
         "doctrine/doctrine-fixtures-bundle": "^3.6",
+        "dvdoug/behat-code-coverage": "^5.3",
         "friends-of-behat/symfony-extension": "^2.0",
         "friendsofphp/php-cs-fixer": "^3.57",
         "imbo/behat-api-extension": "^5.0",
         "phpstan/phpstan": "^1.11",
         "phpstan/phpstan-symfony": "^1.4",
+        "phpunit/phpcov": "^10.0",
         "phpunit/phpunit": "^11.1",
         "qossmic/deptrac": "^2.0",
         "symfony/maker-bundle": "^1.59",

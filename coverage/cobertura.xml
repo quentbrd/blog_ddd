@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage line-rate="0.013793103448276" branch-rate="0.019417475728155" lines-covered="2" lines-valid="145" branches-covered="2" branches-valid="103" complexity="94" version="0.4" timestamp="1717661977">
+  <sources>
+    <source>/home/quentin/Projects/blog_ddd/src</source>
+  </sources>
+  <packages>
+    <package name="Application/Command/CreateBlogPostCommand.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Application\Command\CreateBlogPostCommand" filename="Application/Command/CreateBlogPostCommand.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="string $title, string $content, string $summary, Blog\Domain\Model\Author $author" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="18" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Application/Command/CreateBlogPostCommandHandler.php" line-rate="0" branch-rate="0" complexity="2">
+      <classes>
+        <class name="Blog\Application\Command\CreateBlogPostCommandHandler" filename="Application/Command/CreateBlogPostCommandHandler.php" line-rate="0" branch-rate="0" complexity="2">
+          <methods>
+            <method name="__construct" signature="Blog\Domain\Repository\PostRepositoryInterface $repository, Blog\Domain\Event\EventBusInterface $eventBus" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="18" hits="0"/>
+              </lines>
+            </method>
+            <method name="__invoke" signature="Blog\Application\Command\CreateBlogPostCommand $command" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="22" hits="0"/>
+                <line number="23" hits="0"/>
+                <line number="24" hits="0"/>
+                <line number="25" hits="0"/>
+                <line number="26" hits="0"/>
+                <line number="27" hits="0"/>
+                <line number="28" hits="0"/>
+                <line number="29" hits="0"/>
+                <line number="30" hits="0"/>
+                <line number="31" hits="0"/>
+                <line number="33" hits="0"/>
+                <line number="35" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="0"/>
+            <line number="22" hits="0"/>
+            <line number="23" hits="0"/>
+            <line number="24" hits="0"/>
+            <line number="25" hits="0"/>
+            <line number="26" hits="0"/>
+            <line number="27" hits="0"/>
+            <line number="28" hits="0"/>
+            <line number="29" hits="0"/>
+            <line number="30" hits="0"/>
+            <line number="31" hits="0"/>
+            <line number="33" hits="0"/>
+            <line number="35" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Application/Query/FindAuthorByUuidQuery.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Application\Query\FindAuthorByUuidQuery" filename="Application/Query/FindAuthorByUuidQuery.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="Ramsey\Uuid\UuidInterface $uuid" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="12" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Application/Query/FindAuthorByUuidQueryHandler.php" line-rate="0" branch-rate="0" complexity="2">
+      <classes>
+        <class name="Blog\Application\Query\FindAuthorByUuidQueryHandler" filename="Application/Query/FindAuthorByUuidQueryHandler.php" line-rate="0" branch-rate="0" complexity="2">
+          <methods>
+            <method name="__construct" signature="Blog\Domain\Repository\AuthorRepositoryInterface $authorRepository" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="13" hits="0"/>
+              </lines>
+            </method>
+            <method name="__invoke" signature="Blog\Application\Query\FindAuthorByUuidQuery $query" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="17" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0"/>
+            <line number="17" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Application/Query/FindPostByUuidQuery.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Application\Query\FindPostByUuidQuery" filename="Application/Query/FindPostByUuidQuery.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="Ramsey\Uuid\UuidInterface $uuid" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="12" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Application/Query/FindPostByUuidQueryHandler.php" line-rate="0" branch-rate="0" complexity="2">
+      <classes>
+        <class name="Blog\Application\Query\FindPostByUuidQueryHandler" filename="Application/Query/FindPostByUuidQueryHandler.php" line-rate="0" branch-rate="0" complexity="2">
+          <methods>
+            <method name="__construct" signature="Blog\Domain\Repository\PostRepositoryInterface $postRepository" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="13" hits="0"/>
+              </lines>
+            </method>
+            <method name="__invoke" signature="Blog\Application\Query\FindPostByUuidQuery $query" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="17" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0"/>
+            <line number="17" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Application/Query/FindPostsQuery.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="Blog\Application\Query\FindPostsQuery" filename="Application/Query/FindPostsQuery.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Application/Query/FindPostsQueryHandler.php" line-rate="0" branch-rate="0" complexity="2">
+      <classes>
+        <class name="Blog\Application\Query\FindPostsQueryHandler" filename="Application/Query/FindPostsQueryHandler.php" line-rate="0" branch-rate="0" complexity="2">
+          <methods>
+            <method name="__construct" signature="Blog\Domain\Repository\PostRepositoryInterface $postRepository" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="13" hits="0"/>
+              </lines>
+            </method>
+            <method name="__invoke" signature="Blog\Application\Query\FindPostsQuery $query" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="20" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0"/>
+            <line number="20" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Command/AbstractCreateCommand.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="Blog\Domain\Command\AbstractCreateCommand" filename="Domain/Command/AbstractCreateCommand.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods>
+            <method name="create" signature="array $primitives" line-rate="0" branch-rate="0" complexity="0">
+              <lines>
+                <line number="14" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Command/AbstractPersistCommand.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Domain\Command\AbstractPersistCommand" filename="Domain/Command/AbstractPersistCommand.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="array $primitives" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="14" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Command/AbstractUpdateCommand.php" line-rate="0" branch-rate="0" complexity="3">
+      <classes>
+        <class name="Blog\Domain\Command\AbstractUpdateCommand" filename="Domain/Command/AbstractUpdateCommand.php" line-rate="0" branch-rate="0" complexity="3">
+          <methods>
+            <method name="id" signature="" line-rate="0" branch-rate="0" complexity="3">
+              <lines>
+                <line number="11" hits="0"/>
+                <line number="12" hits="0"/>
+                <line number="15" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="0"/>
+            <line number="12" hits="0"/>
+            <line number="15" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Command/AsyncCommandInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Command/CommandBusInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Command/CommandHandlerInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Command/CommandInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Command/RoutableCommandInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Event/AbstractEntityEvent.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Domain\Event\AbstractEntityEvent" filename="Domain/Event/AbstractEntityEvent.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="Ramsey\Uuid\UuidInterface $entityUuid, array $context" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="22" hits="0"/>
+                <line number="23" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="22" hits="0"/>
+            <line number="23" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Event/BlogPostCreated.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Domain\Event\BlogPostCreated" filename="Domain/Event/BlogPostCreated.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="eventName" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="9" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Event/EventBusInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Event/EventHandlerInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Event/EventInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Exception/EntityCreationException.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Domain\Exception\EntityCreationException" filename="Domain/Exception/EntityCreationException.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="string $class, int $code, ?Throwable $previous" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="14" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Exception/EntityNotFoundException.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Domain\Exception\EntityNotFoundException" filename="Domain/Exception/EntityNotFoundException.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="string $class, mixed $id, string $idProperty, int $code, ?Throwable $previous" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="14" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Exception/RelatedEntityNotFoundException.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Domain\Exception\RelatedEntityNotFoundException" filename="Domain/Exception/RelatedEntityNotFoundException.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="string $class, string $relatedClass, mixed $id, string $idProperty, int $code, ?Throwable $previous" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="11" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Model/Author.php" line-rate="0.25" branch-rate="0.25" complexity="4">
+      <classes>
+        <class name="Blog\Domain\Model\Author" filename="Domain/Model/Author.php" line-rate="0.25" branch-rate="0.25" complexity="4">
+          <methods>
+            <method name="__construct" signature="int $id, Ramsey\Uuid\UuidInterface $uuid, string $name" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="9"/>
+              </lines>
+            </method>
+            <method name="getId" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="18" hits="0"/>
+              </lines>
+            </method>
+            <method name="getUuid" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="23" hits="0"/>
+              </lines>
+            </method>
+            <method name="getName" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="28" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="9"/>
+            <line number="18" hits="0"/>
+            <line number="23" hits="0"/>
+            <line number="28" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Model/BlogPost.php" line-rate="0.11111111111111" branch-rate="0.11111111111111" complexity="9">
+      <classes>
+        <class name="Blog\Domain\Model\BlogPost" filename="Domain/Model/BlogPost.php" line-rate="0.11111111111111" branch-rate="0.11111111111111" complexity="9">
+          <methods>
+            <method name="__construct" signature="?int $id, Ramsey\Uuid\UuidInterface $uuid, string $title, string $content, string $summary, Blog\Domain\Model\Author $author, DateTimeInterface $createdAt, DateTimeInterface $updatedAt" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="5"/>
+              </lines>
+            </method>
+            <method name="getId" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="23" hits="0"/>
+              </lines>
+            </method>
+            <method name="getUuid" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="28" hits="0"/>
+              </lines>
+            </method>
+            <method name="getTitle" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="33" hits="0"/>
+              </lines>
+            </method>
+            <method name="getContent" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="38" hits="0"/>
+              </lines>
+            </method>
+            <method name="getSummary" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="43" hits="0"/>
+              </lines>
+            </method>
+            <method name="getAuthor" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="48" hits="0"/>
+              </lines>
+            </method>
+            <method name="getCreatedAt" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="53" hits="0"/>
+              </lines>
+            </method>
+            <method name="getUpdatedAt" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="58" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="5"/>
+            <line number="23" hits="0"/>
+            <line number="28" hits="0"/>
+            <line number="33" hits="0"/>
+            <line number="38" hits="0"/>
+            <line number="43" hits="0"/>
+            <line number="48" hits="0"/>
+            <line number="53" hits="0"/>
+            <line number="58" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Domain/Query/QueryBusInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Query/QueryHandlerInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Query/QueryInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Repository/AuthorRepositoryInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Repository/PostRepositoryInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Repository/RepositoryInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Domain/Repository/SearchByUuidRepositoryInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Infrastructure/ApiPlatform/Input/BlogPostCreationInput.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Infrastructure\ApiPlatform\Input\BlogPostCreationInput" filename="Infrastructure/ApiPlatform/Input/BlogPostCreationInput.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="string $title, string $content, string $summary, string $authorUuid" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="19" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/ApiPlatform/Processor/BlogPostCreationProcessor.php" line-rate="0" branch-rate="0" complexity="4">
+      <classes>
+        <class name="Blog\Infrastructure\ApiPlatform\Processor\BlogPostCreationProcessor" filename="Infrastructure/ApiPlatform/Processor/BlogPostCreationProcessor.php" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="__construct" signature="Symfony\Component\Validator\Validator\ValidatorInterface $validator, Blog\Domain\Command\CommandBusInterface $commandBus, Blog\Domain\Query\QueryBusInterface $queryBus, Blog\Infrastructure\ApiPlatform\Resource\BlogPostResourceFactory $resourceFactory" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="31" hits="0"/>
+              </lines>
+            </method>
+            <method name="process" signature="mixed $data, ApiPlatform\Metadata\Operation $operation, array $uriVariables, array $context" line-rate="0" branch-rate="0" complexity="3">
+              <lines>
+                <line number="40" hits="0"/>
+                <line number="41" hits="0"/>
+                <line number="44" hits="0"/>
+                <line number="45" hits="0"/>
+                <line number="46" hits="0"/>
+                <line number="49" hits="0"/>
+                <line number="50" hits="0"/>
+                <line number="51" hits="0"/>
+                <line number="52" hits="0"/>
+                <line number="53" hits="0"/>
+                <line number="54" hits="0"/>
+                <line number="56" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="31" hits="0"/>
+            <line number="40" hits="0"/>
+            <line number="41" hits="0"/>
+            <line number="44" hits="0"/>
+            <line number="45" hits="0"/>
+            <line number="46" hits="0"/>
+            <line number="49" hits="0"/>
+            <line number="50" hits="0"/>
+            <line number="51" hits="0"/>
+            <line number="52" hits="0"/>
+            <line number="53" hits="0"/>
+            <line number="54" hits="0"/>
+            <line number="56" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/ApiPlatform/Provider/BlogPostCollectionDataProvider.php" line-rate="0" branch-rate="0" complexity="5">
+      <classes>
+        <class name="Blog\Infrastructure\ApiPlatform\Provider\BlogPostCollectionDataProvider" filename="Infrastructure/ApiPlatform/Provider/BlogPostCollectionDataProvider.php" line-rate="0" branch-rate="0" complexity="5">
+          <methods>
+            <method name="__construct" signature="Blog\Domain\Query\QueryBusInterface $queryBus, Blog\Infrastructure\ApiPlatform\Resource\BlogPostResourceFactory $factory" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="18" hits="0"/>
+              </lines>
+            </method>
+            <method name="supports" signature="ApiPlatform\Metadata\Operation $operation" line-rate="0" branch-rate="0" complexity="3">
+              <lines>
+                <line number="22" hits="0"/>
+                <line number="23" hits="0"/>
+                <line number="26" hits="0"/>
+                <line number="27" hits="0"/>
+                <line number="30" hits="0"/>
+              </lines>
+            </method>
+            <method name="provide" signature="array $uriVariables" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="40" hits="0"/>
+                <line number="41" hits="0"/>
+                <line number="42" hits="0"/>
+                <line number="43" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="0"/>
+            <line number="22" hits="0"/>
+            <line number="23" hits="0"/>
+            <line number="26" hits="0"/>
+            <line number="27" hits="0"/>
+            <line number="30" hits="0"/>
+            <line number="40" hits="0"/>
+            <line number="41" hits="0"/>
+            <line number="42" hits="0"/>
+            <line number="43" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/ApiPlatform/Provider/BlogPostDataProvider.php" line-rate="0" branch-rate="0" complexity="7">
+      <classes>
+        <class name="Blog\Infrastructure\ApiPlatform\Provider\BlogPostDataProvider" filename="Infrastructure/ApiPlatform/Provider/BlogPostDataProvider.php" line-rate="0" branch-rate="0" complexity="7">
+          <methods>
+            <method name="__construct" signature="Blog\Domain\Query\QueryBusInterface $queryBus, Blog\Infrastructure\ApiPlatform\Resource\BlogPostResourceFactory $factory" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="21" hits="0"/>
+              </lines>
+            </method>
+            <method name="supports" signature="ApiPlatform\Metadata\Operation $operation" line-rate="0" branch-rate="0" complexity="3">
+              <lines>
+                <line number="25" hits="0"/>
+                <line number="26" hits="0"/>
+                <line number="29" hits="0"/>
+                <line number="30" hits="0"/>
+                <line number="33" hits="0"/>
+              </lines>
+            </method>
+            <method name="provide" signature="array $uriVariables" line-rate="0" branch-rate="0" complexity="3">
+              <lines>
+                <line number="41" hits="0"/>
+                <line number="42" hits="0"/>
+                <line number="45" hits="0"/>
+                <line number="46" hits="0"/>
+                <line number="47" hits="0"/>
+                <line number="50" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="21" hits="0"/>
+            <line number="25" hits="0"/>
+            <line number="26" hits="0"/>
+            <line number="29" hits="0"/>
+            <line number="30" hits="0"/>
+            <line number="33" hits="0"/>
+            <line number="41" hits="0"/>
+            <line number="42" hits="0"/>
+            <line number="45" hits="0"/>
+            <line number="46" hits="0"/>
+            <line number="47" hits="0"/>
+            <line number="50" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/ApiPlatform/Provider/DataProviderInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Infrastructure/ApiPlatform/Provider/Provider.php" line-rate="0" branch-rate="0" complexity="4">
+      <classes>
+        <class name="Blog\Infrastructure\ApiPlatform\Provider\Provider" filename="Infrastructure/ApiPlatform/Provider/Provider.php" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="__construct" signature="Traversable $dataProviders" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="18" hits="0"/>
+              </lines>
+            </method>
+            <method name="provide" signature="ApiPlatform\Metadata\Operation $operation, array $uriVariables, array $context" line-rate="0" branch-rate="0" complexity="3">
+              <lines>
+                <line number="22" hits="0"/>
+                <line number="23" hits="0"/>
+                <line number="24" hits="0"/>
+                <line number="28" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="0"/>
+            <line number="22" hits="0"/>
+            <line number="23" hits="0"/>
+            <line number="24" hits="0"/>
+            <line number="28" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/ApiPlatform/Resource/BlogPostResource.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Infrastructure\ApiPlatform\Resource\BlogPostResource" filename="Infrastructure/ApiPlatform/Resource/BlogPostResource.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="Ramsey\Uuid\UuidInterface $uuid, string $title, string $content, string $summary, Blog\Infrastructure\ApiPlatform\View\AuthorView $author, DateTimeInterface $createdAt, DateTimeInterface $updatedAt" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="56" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="56" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/ApiPlatform/Resource/BlogPostResourceFactory.php" line-rate="0" branch-rate="0" complexity="2">
+      <classes>
+        <class name="Blog\Infrastructure\ApiPlatform\Resource\BlogPostResourceFactory" filename="Infrastructure/ApiPlatform/Resource/BlogPostResourceFactory.php" line-rate="0" branch-rate="0" complexity="2">
+          <methods>
+            <method name="__construct" signature="Blog\Infrastructure\ApiPlatform\View\AuthorViewFactory $authorViewFactory" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="14" hits="0"/>
+              </lines>
+            </method>
+            <method name="fromModel" signature="Blog\Domain\Model\BlogPost $post" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="18" hits="0"/>
+                <line number="19" hits="0"/>
+                <line number="20" hits="0"/>
+                <line number="21" hits="0"/>
+                <line number="22" hits="0"/>
+                <line number="23" hits="0"/>
+                <line number="24" hits="0"/>
+                <line number="25" hits="0"/>
+                <line number="26" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="0"/>
+            <line number="18" hits="0"/>
+            <line number="19" hits="0"/>
+            <line number="20" hits="0"/>
+            <line number="21" hits="0"/>
+            <line number="22" hits="0"/>
+            <line number="23" hits="0"/>
+            <line number="24" hits="0"/>
+            <line number="25" hits="0"/>
+            <line number="26" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/ApiPlatform/View/AuthorView.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Infrastructure\ApiPlatform\View\AuthorView" filename="Infrastructure/ApiPlatform/View/AuthorView.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="string $name" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="13" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/ApiPlatform/View/AuthorViewFactory.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Infrastructure\ApiPlatform\View\AuthorViewFactory" filename="Infrastructure/ApiPlatform/View/AuthorViewFactory.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="fromModel" signature="Blog\Domain\Model\Author $author" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="13" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Doctrine/Fixtures/AbstractFixture.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Infrastructure\Doctrine\Fixtures\AbstractFixture" filename="Infrastructure/Doctrine/Fixtures/AbstractFixture.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__construct" signature="Doctrine\ORM\EntityManagerInterface $em" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="15" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Doctrine/Fixtures/AuthorFixtures.php" line-rate="0" branch-rate="0" complexity="2">
+      <classes>
+        <class name="Blog\Infrastructure\Doctrine\Fixtures\AuthorFixtures" filename="Infrastructure/Doctrine/Fixtures/AuthorFixtures.php" line-rate="0" branch-rate="0" complexity="2">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Doctrine/Fixtures/BlogPostFixtures.php" line-rate="0" branch-rate="0" complexity="3">
+      <classes>
+        <class name="Blog\Infrastructure\Doctrine\Fixtures\BlogPostFixtures" filename="Infrastructure/Doctrine/Fixtures/BlogPostFixtures.php" line-rate="0" branch-rate="0" complexity="3">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Doctrine/Repository/AbstractRepository.php" line-rate="0" branch-rate="0" complexity="6">
+      <classes>
+        <class name="Blog\Infrastructure\Doctrine\Repository\AbstractRepository" filename="Infrastructure/Doctrine/Repository/AbstractRepository.php" line-rate="0" branch-rate="0" complexity="6">
+          <methods>
+            <method name="__construct" signature="Doctrine\Persistence\ManagerRegistry $registry" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="19" hits="0"/>
+              </lines>
+            </method>
+            <method name="save" signature="object $entity" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="34" hits="0"/>
+                <line number="35" hits="0"/>
+                <line number="37" hits="0"/>
+              </lines>
+            </method>
+            <method name="search" signature="int $id" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="45" hits="0"/>
+              </lines>
+            </method>
+            <method name="all" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="53" hits="0"/>
+              </lines>
+            </method>
+            <method name="exists" signature="int $id" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="58" hits="0"/>
+              </lines>
+            </method>
+            <method name="delete" signature="object $entity" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="66" hits="0"/>
+                <line number="67" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="0"/>
+            <line number="34" hits="0"/>
+            <line number="35" hits="0"/>
+            <line number="37" hits="0"/>
+            <line number="45" hits="0"/>
+            <line number="53" hits="0"/>
+            <line number="58" hits="0"/>
+            <line number="66" hits="0"/>
+            <line number="67" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Doctrine/Repository/AuthorRepository.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Infrastructure\Doctrine\Repository\AuthorRepository" filename="Infrastructure/Doctrine/Repository/AuthorRepository.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="entityClass" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="19" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Doctrine/Repository/PostRepository.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Infrastructure\Doctrine\Repository\PostRepository" filename="Infrastructure/Doctrine/Repository/PostRepository.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="entityClass" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="19" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Doctrine/Repository/SearchByUuidRepositoryTrait.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Infrastructure\Doctrine\Repository\SearchByUuidRepositoryTrait" filename="Infrastructure/Doctrine/Repository/SearchByUuidRepositoryTrait.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="searchByUuid" signature="Ramsey\Uuid\UuidInterface $uuid" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="11" hits="0"/>
+                <line number="12" hits="0"/>
+                <line number="13" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="0"/>
+            <line number="12" hits="0"/>
+            <line number="13" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Foundry/Factory/AuthorFactory.php" line-rate="0" branch-rate="0" complexity="2">
+      <classes>
+        <class name="Blog\Infrastructure\Foundry\Factory\AuthorFactory" filename="Infrastructure/Foundry/Factory/AuthorFactory.php" line-rate="0" branch-rate="0" complexity="2">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Foundry/Factory/BlogPostFactory.php" line-rate="0" branch-rate="0" complexity="2">
+      <classes>
+        <class name="Blog\Infrastructure\Foundry\Factory\BlogPostFactory" filename="Infrastructure/Foundry/Factory/BlogPostFactory.php" line-rate="0" branch-rate="0" complexity="2">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Kernel.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Blog\Infrastructure\Kernel" filename="Infrastructure/Kernel.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="build" signature="Symfony\Component\DependencyInjection\ContainerBuilder $container" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="18" hits="0"/>
+                <line number="19" hits="0"/>
+                <line number="21" hits="0"/>
+                <line number="22" hits="0"/>
+                <line number="24" hits="0"/>
+                <line number="25" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="0"/>
+            <line number="19" hits="0"/>
+            <line number="21" hits="0"/>
+            <line number="22" hits="0"/>
+            <line number="24" hits="0"/>
+            <line number="25" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Symfony/Messenger/MessengerCommandBus.php" line-rate="0" branch-rate="0" complexity="8">
+      <classes>
+        <class name="Blog\Infrastructure\Symfony\Messenger\MessengerCommandBus" filename="Infrastructure/Symfony/Messenger/MessengerCommandBus.php" line-rate="0" branch-rate="0" complexity="8">
+          <methods>
+            <method name="__construct" signature="Symfony\Component\Messenger\MessageBusInterface $commandBus" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="24" hits="0"/>
+              </lines>
+            </method>
+            <method name="dispatch" signature="Blog\Domain\Command\RoutableCommandInterface $command" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="29" hits="0"/>
+                <line number="30" hits="0"/>
+                <line number="33" hits="0"/>
+                <line number="35" hits="0"/>
+              </lines>
+            </method>
+            <method name="handleSync" signature="Blog\Domain\Command\CommandInterface $command" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="41" hits="0"/>
+                <line number="42" hits="0"/>
+                <line number="46" hits="0"/>
+                <line number="48" hits="0"/>
+              </lines>
+            </method>
+            <method name="handleRoutable" signature="Blog\Domain\Command\RoutableCommandInterface $command" line-rate="0" branch-rate="0" complexity="3">
+              <lines>
+                <line number="54" hits="0"/>
+                <line number="56" hits="0"/>
+                <line number="57" hits="0"/>
+                <line number="60" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="0"/>
+            <line number="29" hits="0"/>
+            <line number="30" hits="0"/>
+            <line number="33" hits="0"/>
+            <line number="35" hits="0"/>
+            <line number="41" hits="0"/>
+            <line number="42" hits="0"/>
+            <line number="46" hits="0"/>
+            <line number="48" hits="0"/>
+            <line number="54" hits="0"/>
+            <line number="56" hits="0"/>
+            <line number="57" hits="0"/>
+            <line number="60" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Symfony/Messenger/MessengerEventBus.php" line-rate="0" branch-rate="0" complexity="4">
+      <classes>
+        <class name="Blog\Infrastructure\Symfony\Messenger\MessengerEventBus" filename="Infrastructure/Symfony/Messenger/MessengerEventBus.php" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="__construct" signature="Symfony\Component\Messenger\MessageBusInterface $eventBus" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="19" hits="0"/>
+              </lines>
+            </method>
+            <method name="publish" signature="Blog\Domain\Event\EventInterface $events" line-rate="0" branch-rate="0" complexity="3">
+              <lines>
+                <line number="23" hits="0"/>
+                <line number="25" hits="0"/>
+                <line number="26" hits="0"/>
+                <line number="30" hits="0"/>
+                <line number="32" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="0"/>
+            <line number="23" hits="0"/>
+            <line number="25" hits="0"/>
+            <line number="26" hits="0"/>
+            <line number="30" hits="0"/>
+            <line number="32" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Infrastructure/Symfony/Messenger/MessengerQueryBus.php" line-rate="0" branch-rate="0" complexity="3">
+      <classes>
+        <class name="Blog\Infrastructure\Symfony\Messenger\MessengerQueryBus" filename="Infrastructure/Symfony/Messenger/MessengerQueryBus.php" line-rate="0" branch-rate="0" complexity="3">
+          <methods>
+            <method name="__construct" signature="Symfony\Component\Messenger\MessageBusInterface $queryBus" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="21" hits="0"/>
+              </lines>
+            </method>
+            <method name="ask" signature="Blog\Domain\Query\QueryInterface $query" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="27" hits="0"/>
+                <line number="28" hits="0"/>
+                <line number="32" hits="0"/>
+                <line number="34" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="21" hits="0"/>
+            <line number="27" hits="0"/>
+            <line number="28" hits="0"/>
+            <line number="32" hits="0"/>
+            <line number="34" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

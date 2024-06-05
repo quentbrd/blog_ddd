@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Tests\Infrastructure\ApiPlatform\Processor;
+namespace Blog\Tests\PHPUnit\Infrastructure\ApiPlatform\Processor;
 
 use ApiPlatform\Metadata\Get;
 use Blog\Application\Query\FindAuthorByUuidQuery;
@@ -15,6 +15,7 @@ use Blog\Infrastructure\ApiPlatform\Resource\BlogPostResourceFactory;
 use Blog\Infrastructure\ApiPlatform\View\AuthorViewFactory;
 use Blog\Infrastructure\Foundry\Factory\AuthorFactory;
 use Blog\Infrastructure\Foundry\Factory\BlogPostFactory;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\Validator\ConstraintViolation;
@@ -22,6 +23,7 @@ use Symfony\Component\Validator\ConstraintViolationList;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Zenstruck\Foundry\Test\Factories;
 
+#[CoversClass(BlogPostCreationProcessor::class)]
 class BlogPostCreationProcessorTest extends TestCase
 {
     use Factories;
